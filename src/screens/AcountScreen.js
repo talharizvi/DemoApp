@@ -18,16 +18,6 @@ function AcountScreen({navigation}) {
   const [emailId, setEmail] = useState('');
   const [valid,setValid] = useState(false);
 
-  // const handleEmail = () => {
-  //   const to = emailId // string or array of email addresses
-  //   email(to, {
-  //       // Optional additional arguments
-  //       //cc: ['bazzy@moo.com', 'doooo@daaa.com'], // string or array of email addresses
-  //       //bcc: 'mee@mee.com', // string or array of email addresses
-  //       subject: 'Otp Message',
-  //       body: 4321
-  //   }).catch(console.error)
-//}
 
   const validate = (text) => {
     console.log(text);
@@ -46,7 +36,7 @@ function AcountScreen({navigation}) {
   }
 
     return (
-      <View style={{ flex: 1,backgroundColor:'black' }}>
+      <View style={{ flex: 1,backgroundColor:'#000000' }}>
       <TouchableOpacity style={{position:'absolute',left:8,top:20,zIndex:2}} onPress={()=>navigation.goBack()}>
       <Image
       style={{width:40,height:40}}
@@ -63,7 +53,7 @@ function AcountScreen({navigation}) {
   <View style={{flex:1,paddingTop:56,borderTopLeftRadius:16,borderTopRightRadius:16,backgroundColor:'#fff'}}>
   <Text style={{marginLeft:16,fontSize:20,fontWeight:'bold'}}>Account Help!</Text>
   <Text style={{color:'gray',marginLeft:16}}>Account Recovery Options</Text>
-  <Text style={{marginTop:8,marginLeft:16,color:'black'}}>Enter your email address</Text>
+  <Text style={{marginTop:8,marginLeft:16,color:'#000000'}}>Enter your email address</Text>
   <TextInput style={{ marginLeft:16, height: 40,  }}
   onChangeText={text => validate(text)}
   value={emailId}
@@ -73,15 +63,19 @@ function AcountScreen({navigation}) {
  
   <View style={{flex:1,flexDirection:'row',justifyContent:'space-around',alignItems:'center',alignSelf:'center',width:'80%',marginTop:windowHeight/4}}>
   <Text>Need Help?</Text>
-  <TouchableOpacity style={{backgroundColor:'orange',paddingHorizontal:26,paddingVertical:8,borderRadius:8}} onPress={()=>
-   { if(valid){
-      //handleEmail();
-      navigation.navigate('AcountVerification',{email:emailId})
-    } 
-      
-    else{
-      alert("Enter correct email")
-    }}
+  <TouchableOpacity style={{backgroundColor:'#fa7719',paddingHorizontal:26,paddingVertical:8,borderRadius:8}} onPress={()=>
+   { 
+    if(emailId==''){
+      alert("Enter email")
+    } else{
+      if(valid){
+        navigation.navigate('AcountVerification',{email:emailId})
+      } 
+      else{
+        alert("Enter correct email")
+      }}
+    }
+    
     
   }>
   <Text style={{color:'#fff'}}>Submit</Text>

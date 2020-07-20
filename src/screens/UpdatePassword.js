@@ -19,7 +19,7 @@ function UpdatePassword({navigation}) {
 
     return (
         
-      <View style={{ flex: 1,backgroundColor:'black' }}>
+      <View style={{ flex: 1,backgroundColor:'#000000' }}>
       
       <TouchableOpacity style={{position:'absolute',left:8,top:20,zIndex:2}} onPress={()=>navigation.goBack()}>
       <Image
@@ -38,7 +38,7 @@ function UpdatePassword({navigation}) {
   <View style={{flex:1,paddingTop:56,borderTopLeftRadius:16,borderTopRightRadius:16,backgroundColor:'#fff'}}>
   <Text style={{marginLeft:16,fontSize:20,fontWeight:'bold',marginBottom:8}}>Account Help!</Text>
   <Text style={{color:'gray',marginLeft:16}}>Account Recovery Options</Text>
-  <Text style={{marginTop:8,marginLeft:16,color:'black',marginVertical:16}}>Enter new password</Text>
+  <Text style={{marginTop:8,marginLeft:16,color:'#000000',marginVertical:16}}>Enter new password</Text>
   <TextInput style={{ marginLeft:16, height: 40,  }}
   onChangeText={text => setPassword(text)}
   value={password}
@@ -54,7 +54,14 @@ function UpdatePassword({navigation}) {
  
   <View style={{flex:1,flexDirection:'row',justifyContent:'space-around',alignItems:'center',alignSelf:'center',width:'80%',marginTop:windowHeight/4}}>
   <Text>Need Help?</Text>
-  <TouchableOpacity style={{backgroundColor:'orange',paddingHorizontal:26,paddingVertical:8,borderRadius:8}} onPress={()=>navigation.navigate('UpdatePassword')}>
+  <TouchableOpacity style={{backgroundColor:'#fa7719',paddingHorizontal:26,paddingVertical:8,borderRadius:8}} onPress={()=>{
+    if(password!=confirmPassword){
+      alert("Password does not match")
+    }else{
+      alert("Password changed successfully")
+      navigation.navigate('Login')
+    }
+  }}>
   <Text style={{color:'#fff'}}>Submit</Text>
   </TouchableOpacity>
   

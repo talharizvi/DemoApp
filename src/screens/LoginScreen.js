@@ -61,7 +61,7 @@ function LoginScreen({navigation}) {
             />
 
             <TouchableOpacity style={{marginLeft:16,marginTop:8}} onPress={()=>navigation.navigate('Acount')}>
-                <Text style={{color:'orange'}}>Forgot Password?</Text>
+                <Text style={{color:'#fa7719'}}>Forgot Password?</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={{borderRadius:8,alignSelf:'center',marginTop:windowHeight/4,
@@ -69,7 +69,7 @@ function LoginScreen({navigation}) {
             justifyContent: 'center',
             width: '80%',
             height: 56,
-            backgroundColor: "orange",
+            backgroundColor: "#fa7719",
             }} onPress={()=>valid?console.log("Email Valids"):alert('Enter correct email')} 
            >
                 <Text style={{color:"#fff"}}>Login</Text>
