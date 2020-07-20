@@ -21,7 +21,6 @@ import LoginScreen from './src/screens/LoginScreen';
 import AcountScreen from './src/screens/AcountScreen';
 import UpdatePassword from './src/screens/UpdatePassword';
 import AcountVerification from './src/screens/AcountVerification';
-import Test from './src/screens/Test';
 
 
 
