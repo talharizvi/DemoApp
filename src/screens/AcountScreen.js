@@ -52,7 +52,7 @@ function AcountScreen({navigation}) {
         
   <View style={{flex:1,paddingTop:56,borderTopLeftRadius:16,borderTopRightRadius:16,backgroundColor:'#fff'}}>
   <Text style={{marginLeft:16,fontSize:20,fontWeight:'bold'}}>Account Help!</Text>
-  <Text style={{color:'gray',marginLeft:16}}>Account Recovery Options</Text>
+  <Text style={{color:'#b3afaf',marginLeft:16}}>Account Recovery Options</Text>
   <Text style={{marginTop:8,marginLeft:16,color:'#000000'}}>Enter your email address</Text>
   <TextInput style={{ marginLeft:16, height: 40,  }}
   onChangeText={text => validate(text)}

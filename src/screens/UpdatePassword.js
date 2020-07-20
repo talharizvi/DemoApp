@@ -37,7 +37,7 @@ function UpdatePassword({navigation}) {
         
   <View style={{flex:1,paddingTop:56,borderTopLeftRadius:16,borderTopRightRadius:16,backgroundColor:'#fff'}}>
   <Text style={{marginLeft:16,fontSize:20,fontWeight:'bold',marginBottom:8}}>Account Help!</Text>
-  <Text style={{color:'gray',marginLeft:16}}>Account Recovery Options</Text>
+  <Text style={{color:'#b3afaf',marginLeft:16}}>Account Recovery Options</Text>
   <Text style={{marginTop:8,marginLeft:16,color:'#000000',marginVertical:16}}>Enter new password</Text>
   <TextInput style={{ marginLeft:16, height: 40,  }}
   onChangeText={text => setPassword(text)}
@@ -55,12 +55,17 @@ function UpdatePassword({navigation}) {
   <View style={{flex:1,flexDirection:'row',justifyContent:'space-around',alignItems:'center',alignSelf:'center',width:'80%',marginTop:windowHeight/4}}>
   <Text>Need Help?</Text>
   <TouchableOpacity style={{backgroundColor:'#fa7719',paddingHorizontal:26,paddingVertical:8,borderRadius:8}} onPress={()=>{
-    if(password!=confirmPassword){
-      alert("Password does not match")
+    if(password!='' && confirmPassword !=''){
+      if(password!=confirmPassword){
+        alert("Password does not match")
+      }else{
+        alert("Password changed successfully")
+        navigation.navigate('Login')
+      }
     }else{
-      alert("Password changed successfully")
-      navigation.navigate('Login')
+      alert('Enter fields')
     }
+    
   }}>
   <Text style={{color:'#fff'}}>Submit</Text>
   </TouchableOpacity>

@@ -34,7 +34,7 @@ function AcountVerification({route,navigation}) {
         
   <View style={{flex:1,paddingTop:56,borderTopLeftRadius:16,borderTopRightRadius:16,backgroundColor:'#fff'}}>
   <Text style={{marginLeft:16,fontSize:20,fontWeight:'bold'}}>Verification</Text>
-  <Text style={{color:'gray',marginLeft:16}}>Verification code sent to {email}</Text>
+  <Text style={{color:'#b3afaf',marginLeft:16}}>Verification code sent to {email}</Text>
   
   <OTPTextView
   containerStyle={{marginBottom: 20,marginLeft:20,marginRight:20,marginTop:20}}
@@ -45,7 +45,7 @@ function AcountVerification({route,navigation}) {
 
 <View style={{flex:1,flexDirection:'row',justifyContent:'space-around',alignItems:'center',alignSelf:'center',marginTop:windowHeight/4,width:'80%'}}>
 <Text>Need Help?</Text>
-<TouchableOpacity style={{backgroundColor:'#fa7719',paddingHorizontal:26,paddingVertical:8,borderRadius:8}} onPress={()=>navigation.navigate('UpdatePassword')}>
+<TouchableOpacity style={{backgroundColor:'#fa7719',paddingHorizontal:26,paddingVertical:8,borderRadius:8}} onPress={()=>otpInput!='' ? navigation.navigate('UpdatePassword'):alert("Please enter otp")}>
 <Text style={{color:'#fff'}}>Verify</Text>
 </TouchableOpacity>
 

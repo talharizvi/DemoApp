@@ -36,7 +36,7 @@ function LoginScreen({navigation}) {
 
     return (
       
-        <View style={{ flex: 1,backgroundColor:'#fff',paddingBottom:70}}>
+        <View style={{ flex: 1,backgroundColor:'#000000',paddingBottom:70}}>
         
         <View>
             <Image
@@ -70,7 +70,15 @@ function LoginScreen({navigation}) {
             width: '80%',
             height: 56,
             backgroundColor: "#fa7719",
-            }} onPress={()=>valid?console.log("Email Valids"):alert('Enter correct email')} 
+            }} onPress={()=>
+              {
+                if(email!='' && password!=''){
+                  valid?alert("Success"):alert('Enter correct email')
+                }else{
+                  alert('Enter email and password')   
+                }  
+              }
+            } 
            >
                 <Text style={{color:"#fff"}}>Login</Text>
             </TouchableOpacity>
